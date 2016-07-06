@@ -10,3 +10,5 @@ The application is started as "bibliow <sqlite-file-name>".
 
 If <sqlite-file-name> does not exist, it is created and database is initialized (tabled is created,
 triggers and indexes also).
+
+The admin web interface is started in browser as "http://localhost:5000".
