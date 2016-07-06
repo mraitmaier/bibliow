@@ -1,7 +1,8 @@
 # bibliow
 
 This is a small learning project (go web development). 
-Its purpose is to administer the items borrowed from library. Its backend is SQLite3 database.
+Its purpose is to administer the items borrowed from library. The backend is SQLite3 database.
+
 The DB has only one table called "items". The operations on this table are standard: add, edit and remove.
 There's also import functionality where multiple items can be added by parsing the specially formatted 
 CSV files.
