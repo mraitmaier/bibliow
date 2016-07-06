@@ -22,3 +22,7 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+# personal additions: .db is SQLite file and .csv are... well, inputs CSV files. 
+*.db
+*.csv
