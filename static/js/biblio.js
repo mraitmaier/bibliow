@@ -26,22 +26,6 @@ function deleteItem(name, id) {
     $("#removeModal").modal("hide");
 }
 
-/*
-//
-function addItem() {
-
-    //if ( $('#add_case_form')[0].checkValidity() && $('#add_case_form')[1].checkValidity() ) {
-//    if(validateForm()) {
-        postForm("add_form", "/biblio");
-        $("#addModal").modal("hide");
-  //      return true;
- //   }
-  //  return false;
-  //  
-  return;
-}
-*/
-
 //
 function modifyItem(form_id, id) {
 
@@ -72,34 +56,3 @@ var isEmptyText = function(txt) {
     return false;
 }
 
-/*
-//
-function validateInput(txt, name) {
-    if (!txt) { 
-        alert("The '" + name + "' is mandatory field. Must not be left empty."); 
-        return false;
-    }
-    return true;
-}
-
-//
-function validateForm() {
-    if (!validateInput($("#caseid").val(), "Test Case ID"))  {
-        return false
-    }
-    if  (!validateInput($("#casename").val(), "Test Case Name")) {
-        return false
-    }
-    return true
-}
-
-function validateReqForm(frm) {
-    if (validateInput($("#reqid").val(), "Requirement Short Name"))  {
-        return false
-    }
-    if  (!validateInput($("#reqname").val(), "Requirement Name")) {
-        return false
-    }
-    return true
-}
-*/

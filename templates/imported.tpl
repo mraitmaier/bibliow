@@ -9,7 +9,7 @@
     {{template "navbar" ""}}
 
     <div class="container-fluid">
-        <div class="row col-md-10" id="header">
+        <div class="row col-sm-10" id="header">
             <h1 id="main-title">Import Status</h1>
         </div> <!-- row -->
 
@@ -42,7 +42,7 @@
                         <td>{{$elem.Type}}</td>
                         <td>{{$elem.Library}}</td>
                         <td>{{$elem.Language}}</td>
-                        <td>{{$elem.Date}}</td>
+                        <td>{{fmtdate $elem.Date}}</td>
                         <td class="text-right">
                             <span data-toggle="tooltip" data-placement="up" title="View Details">
                                 <a href="" data-toggle="modal" data-target="#viewModal" 
@@ -73,12 +73,17 @@
                 </tbody>
 
                 </table>
-                </ul>
     {{else}}
     <p>No items were imported (but {{.NumAll}} {{if eq .NumAll 1}}item was{{else}}items were{{end}} parsed from file).<br>
        Note that known duplicates and invalid items were ignored.</p>
     {{end}}
             </div> <!-- data-list -->
+        </div> <!-- row -->
+
+        <div class="row">
+            <a class="btn btn-primary btn-sm col-sm-offset-2 col-sm-1" id="ok-btn" href="/index">
+                <span class="fa fa-check"></span> &nbsp; OK 
+            </a>
         </div> <!-- row -->
     </div> <!-- container fluid -->
 
