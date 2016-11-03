@@ -49,6 +49,7 @@ func main() {
 	fmt.Println("Database initialized.")
 
 	// now start the web server
+    fmt.Println("Serving on 'http://localhost:5000'...")
 	if err = webStart(cfg, DefWebRoot); err != nil {
 		fmt.Printf("FATAL: web server cannot be started: %s\n", err.Error())
 		return
@@ -84,7 +85,7 @@ func usage() {
 	fmt.Println("\tbiblio  <SQLite_DB_name> <COBISS_CSV_fname>")
 	fmt.Println()
 	fmt.Println("  <SQLite_DB_name>   - a path to SQLite database (it's just a file...)")
-	fmt.Println("Paramater is mandatory.")
+	fmt.Println("  Parameter is mandatory.")
 }
 
 // The webStart function actually starts the web application.
@@ -250,7 +251,7 @@ func parseFormValues(r *http.Request) *Item {
 	i.Library = strings.TrimSpace(r.FormValue("library"))
 	i.InvNumber = strings.TrimSpace(r.FormValue("invnumber"))
 	i.Signature = strings.TrimSpace(r.FormValue("signature"))
-	i.Date = strings.TrimSpace(r.FormValue("date"))
+	i.Date = strings.TrimSpace(r.FormValue("dateb"))
 	i.Created = strings.TrimSpace(r.FormValue("created"))
 	i.Modified = strings.TrimSpace(r.FormValue("modified"))
 	return i

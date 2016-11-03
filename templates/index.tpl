@@ -65,7 +65,7 @@
                                     data-language="{{$elem.Language}}"
                                     data-signature="{{$elem.Signature}}"
                                     data-invnumber="{{$elem.InvNumber}}"
-                                    data-date="{{$elem.Date}}"
+                                    data-dateb="{{$elem.Date}}"
                                     data-publisher="{{$elem.Publisher}}"
                                     data-year="{{$elem.Year}}"
                                     data-isbn="{{$elem.ISBN}}"
@@ -88,7 +88,7 @@
                                     data-language="{{$elem.Language}}"
                                     data-signature="{{$elem.Signature}}"
                                     data-invnumber="{{$elem.InvNumber}}"
-                                    data-date="{{$elem.Date}}"
+                                    data-dateb="{{$elem.Date}}"
                                     data-publisher="{{$elem.Publisher}}"
                                     data-year="{{$elem.Year}}"
                                     data-isbn="{{$elem.ISBN}}"
@@ -199,7 +199,7 @@
         modal.find('.modal-body #year').text(button.data('year'));
         modal.find('.modal-body #signature').text(button.data('signature'));
         modal.find('.modal-body #invnumber').text(button.data('invnumber'));
-        modal.find('.modal-body #date').text(button.data('date'));
+        modal.find('.modal-body #dateb').text(button.data('dateb'));
         modal.find('.modal-body #publisher').text(button.data('publisher'));
         modal.find('.modal-body #isbn').text(button.data('isbn'));
         modal.find('.modal-body #translator').text(button.data('translator'));
@@ -227,7 +227,7 @@
         modal.find('.modal-body #year').val(button.data('year'));
         modal.find('.modal-body #signature').val(button.data('signature'));
         modal.find('.modal-body #invnumber').val(button.data('invnumber'));
-        modal.find('.modal-body #date').val(button.data('date'));
+        modal.find('.modal-body #dateb').val(button.data('dateb'));
         modal.find('.modal-body #publisher').val(button.data('publisher'));
         modal.find('.modal-body #isbn').val(button.data('isbn'));
         modal.find('.modal-body #translator').val(button.data('translator'));
@@ -406,9 +406,9 @@
              <div class="col-sm-4">
                 <input type="text" class="form-control" id="invnumber" name="invnumber" placeholder="Inventory Number">
              </div>
-             <label for="date" class="col-sm-2 control-label">Date Borrowed</label>
+             <label for="dateb" class="col-sm-2 control-label">Date Borrowed</label>
              <div class="col-sm-4">
-                <input type="date" class="form-control" id="date" name="date" placeholder="Date Borrowed">
+                <input type="date" class="form-control" id="dateb" name="dateb" placeholder="Date Borrowed">
              </div>
          </div>
           <div class="form-group form-group-sm">
@@ -509,9 +509,9 @@
              <div class="col-sm-4">
                 <label class="form-control" id="invnumber" name="invnumber">
              </div>
-             <label for="date" class="col-sm-2 control-label">Date Borrowed</label>
+             <label for="dateb" class="col-sm-2 control-label">Date Borrowed</label>
              <div class="col-sm-4">
-                <label class="form-control" id="date" name="date">
+                <label class="form-control" id="dateb" name="dateb">
              </div>
          </div>
           <div class="form-group form-group-sm">
@@ -624,7 +624,7 @@
              </div>
              <label for="date" class="col-sm-2 control-label">Date Borrowed</label>
              <div class="col-sm-4">
-                <input type="date" class="form-control" id="date" name="date">
+                <input type="date" class="form-control" id="dateb" name="dateb">
              </div>
          </div>
           <div class="form-group form-group-sm">

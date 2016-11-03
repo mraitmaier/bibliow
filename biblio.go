@@ -167,12 +167,24 @@ func parseTitleAndType(line string, item *Item) string {
 	return line
 }
 
+// reformat the date string from slovenian type date to more international style. 
+func formatDate(d string) string {
+    l := strings.Split(strings.TrimSpace(d), ".")
+    var newd string
+    if len(l) == 3 {
+        newd = fmt.Sprintf("%s-%s-%s", l[2], l[1], l[0])
+    } else {
+        newd = "2121-12-31" // invalid value, put it in future
+    }
+    return newd
+}
+
 // helper function that parses a single line and updates the Item object with proper data.
 func parseLine(line string, item *Item) {
 	// parse date
 	final := len(line)
 	datestr := line[final-10:]
-	item.Date = strings.TrimSpace(datestr)
+	item.Date = formatDate(datestr)
 	//
 	line = parseTitleAndType(line[:final-10], item)
 	line = parseAuthorYearAndLang(line, item)
