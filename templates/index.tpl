@@ -139,46 +139,9 @@
     // and validation plugin also...
     $(document).ready( function() {
 
-        $('#items').DataTable();
-
-/*
-        $('#add_form').validate({
-            rules: {
-                caseid: {
-                    required: true,
-                    minlength: 2
-                },
-                casename: {
-                    required: true,
-                    minlength: 2
-                },
-                priority: {
-                    required: true
-                },  
-                automated: {
-                    required: true
-                }  
-            },
+        $('#items').DataTable({
+            stateSave: true
         });
-        $('#modify_form').validate({
-            rules: {
-                caseid: {
-                    required: true,
-                    minlength: 2
-                },
-                casename: {
-                    required: true,
-                    minlength: 2
-                },
-                priority: {
-                    required: true
-                },  
-                automated: {
-                    required: true
-                }  
-            },
-        });
-*/
     });
 
     $('#viewModal').on('show.bs.modal', function (event) {
