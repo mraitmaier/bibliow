@@ -101,6 +101,7 @@ func webStart(cfg *Cfg, wwwpath string) (err error) {
 	//web page templates, with defined additional functions
 	funcs := template.FuncMap{
 		"add":     func(x, y int) int { return x + y },
+        "fmtdate": func (s string) string { return reformatDate(s) },
 		"length":  func(list []string) int { return len(list) },
 		"totitle": func(s string) string { return strings.Title(s) },
 		"toupper": func(s string) string { return strings.ToUpper(s) },
@@ -391,4 +392,16 @@ func err404Handler(cfg *Cfg) http.Handler {
 			return
 		}
 	})
+}
+
+// helper function used on web page that takes date in 'yyyy-mm-dd' format in reformats it to 'dd.mm.yyyy' format. 
+func reformatDate(s string) string {
+    l := strings.Split(strings.TrimSpace(s), "-")
+    var newd string
+    if len(l) == 3 {
+        newd = fmt.Sprintf("%s.%s.%s", l[2], l[1], l[0])
+    } else {
+        newd = "31.12.2121" // invalid value, put it in the distant future to stand out...
+    }
+    return newd
 }

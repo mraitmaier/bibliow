@@ -51,7 +51,7 @@
                         <td>{{$elem.Type}}</td>
                         <td>{{$elem.Library}}</td>
                         <td>{{$elem.Language}}</td>
-                        <td>{{$elem.Date}}</td>
+                        <td>{{fmtdate $elem.Date}}</td>
                         <td class="text-right">
                             <span data-toggle="tooltip" data-placement="up" title="View Details">
                                 <a href="" data-toggle="modal" data-target="#viewModal" 
@@ -135,6 +135,12 @@
     {{template "JS-includes"}}
     <script>
     
+    // reformat date from international ISO 8086 'yyyy-mm-dd' form to slovene standard 'dd.mm.yyyy' format.
+    function reformatDate(d) {
+        var arr = d.split("-");
+        return arr[2] + "." + arr[1] + "." + arr[0];
+    }
+
     // initialize dataTables jQuery plugin for better tables...
     // and validation plugin also...
     $(document).ready( function() {
@@ -162,7 +168,7 @@
         modal.find('.modal-body #year').text(button.data('year'));
         modal.find('.modal-body #signature').text(button.data('signature'));
         modal.find('.modal-body #invnumber').text(button.data('invnumber'));
-        modal.find('.modal-body #dateb').text(button.data('dateb'));
+        modal.find('.modal-body #dateb').text(reformatDate(button.data('dateb')));
         modal.find('.modal-body #publisher').text(button.data('publisher'));
         modal.find('.modal-body #isbn').text(button.data('isbn'));
         modal.find('.modal-body #translator').text(button.data('translator'));
